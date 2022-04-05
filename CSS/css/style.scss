@@ -1,0 +1,121 @@
+$cExcelColor: rgb(33, 115, 70);
+$cWhite: white;
+
+@mixin barPros($left: 40px, $width: 20px, $transform: 327deg) {
+    position: absolute;
+    left: $left;
+    height: 100%;
+    width: $width;
+    background-color: $cWhite;
+    transform: skewX($transform);
+}
+
+// @mixin sameValues($props,$value){
+//     @each $prop in $props {
+//         #{$prop} : $value;
+//     }
+// }
+
+// @mixin transitionProps {
+//     transition: {
+//         property: transform;
+//         duration: 0.4s;
+//         delay: 0.5s;
+//         timing-function: ease-in-out;    
+//     }
+// }
+
+@mixin animationProps {
+    animation: {
+        name: kf-animation;
+        duration: 0.7s;
+        delay: 0.5s;
+        iteration-count: 1;
+        fill-mode: forwards;   
+    }
+}
+
+@keyframes kf-animation {
+
+	75% {
+		transform: translateX(-120%);
+        background-color: transparent;
+	}
+    
+    100% {
+        transform: translateX(-80%) scaleY(1.25);
+        clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 82.5%);
+    }
+}
+
+body {
+    margin-top: 50px;
+}
+
+.excel {
+    height: 250px;
+    width: 400px;
+    display: flex;
+    position: relative;
+
+    & .cover {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 50%;
+        background-color: $cExcelColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        &:hover {
+            @include animationProps();
+        }
+
+        & .x {
+            height: 50%;
+            width: 50%;
+            position: relative;
+            
+            & .bar-1 {
+                @include barPros($transform: 327deg);
+            }
+    
+            & .bar-2 {
+                @include barPros($transform: 33deg);
+            }      
+        }  
+    }
+
+    & .contents {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        left: 50%;
+        background-color: $cExcelColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+
+        & .contents-box {
+            height: 80%;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            justify-content: space-between; 
+            align-items: center;
+
+            & li {
+                height: 15%;
+                width: 45%;
+                list-style: none;
+                background-color: $cWhite;
+            }
+        }
+    }
+}
+

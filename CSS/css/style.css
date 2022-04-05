@@ -1,0 +1,141 @@
+@-webkit-keyframes kf-animation {
+  75% {
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
+    background-color: transparent;
+  }
+  100% {
+    -webkit-transform: translateX(-80%) scaleY(1.25);
+            transform: translateX(-80%) scaleY(1.25);
+    -webkit-clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 82.5%);
+            clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 82.5%);
+  }
+}
+
+@keyframes kf-animation {
+  75% {
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
+    background-color: transparent;
+  }
+  100% {
+    -webkit-transform: translateX(-80%) scaleY(1.25);
+            transform: translateX(-80%) scaleY(1.25);
+    -webkit-clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 82.5%);
+            clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 82.5%);
+  }
+}
+
+body {
+  margin-top: 50px;
+}
+
+.excel {
+  height: 250px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.excel .cover {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 50%;
+  background-color: #217346;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.excel .cover:hover {
+  -webkit-animation-name: kf-animation;
+          animation-name: kf-animation;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.excel .cover .x {
+  height: 50%;
+  width: 50%;
+  position: relative;
+}
+
+.excel .cover .x .bar-1 {
+  position: absolute;
+  left: 40px;
+  height: 100%;
+  width: 20px;
+  background-color: white;
+  -webkit-transform: skewX(327deg);
+          transform: skewX(327deg);
+}
+
+.excel .cover .x .bar-2 {
+  position: absolute;
+  left: 40px;
+  height: 100%;
+  width: 20px;
+  background-color: white;
+  -webkit-transform: skewX(33deg);
+          transform: skewX(33deg);
+}
+
+.excel .contents {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 50%;
+  background-color: #217346;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 0;
+}
+
+.excel .contents .contents-box {
+  height: 80%;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.excel .contents .contents-box li {
+  height: 15%;
+  width: 45%;
+  list-style: none;
+  background-color: white;
+}
+/*# sourceMappingURL=style.css.map */
